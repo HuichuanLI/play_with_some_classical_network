@@ -4,3 +4,5 @@
 - 多层感知机
 - VGG
 - GoogLenet
+- ResNet18
+- ResNet50
