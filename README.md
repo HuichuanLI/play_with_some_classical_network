@@ -10,9 +10,8 @@
 - shufflenet
 - senet
 - CBAM
-- STN
+- STN 
 - Transformer
 - VIT
 - YoLo
 - Bert
-- 
