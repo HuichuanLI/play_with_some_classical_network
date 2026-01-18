@@ -6,3 +6,13 @@
 - GoogLenet
 - ResNet18
 - ResNet50
+- mobilenet
+- shufflenet
+- senet
+- CBAM
+- STN
+- Transformer
+- VIT
+- YoLo
+- Bert
+- 
