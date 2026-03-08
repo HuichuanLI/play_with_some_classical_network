@@ -4,3 +4,7 @@
 dataset/.DS_Store
 
 dataset/banana-detection/
+
+data/
+
+model/
