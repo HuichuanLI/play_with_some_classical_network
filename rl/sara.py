@@ -384,35 +384,35 @@ if __name__ == "__main__":
     #     reward_list.append(total_r)
 
     # # 4.SARSA
-    # agent = SARSA(12, 4, epsilon, alpha, gamma)
-    # reward_list = []
-    # for ep in tqdm(range(episode_num)):
-    #     state = env.reset()
-    #     done = False
-    #     total_r = 0
-    #     action = agent.take_action(state)
-    #     while not done:
-    #         next_s, r, done = env.step(action)
-    #         next_a = agent.take_action(next_s)
-    #         agent.update(state, action, r, next_s, next_a)
-    #         state, action = next_s, next_a
-    #         total_r += r
-    #     reward_list.append(total_r)
-
-    # 5.Q-Learning
-    agent = QLearning(12,4,epsilon,alpha,gamma)
+    agent = SARSA(12, 4, epsilon, alpha, gamma)
     reward_list = []
     for ep in tqdm(range(episode_num)):
         state = env.reset()
         done = False
         total_r = 0
+        action = agent.take_action(state)
         while not done:
-            action = agent.take_action(state)
             next_s, r, done = env.step(action)
-            agent.update(state, action, r, next_s)
-            state = next_s
+            next_a = agent.take_action(next_s)
+            agent.update(state, action, r, next_s, next_a)
+            state, action = next_s, next_a
             total_r += r
         reward_list.append(total_r)
+
+    # # 5.Q-Learning
+    # agent = QLearning(12,4,epsilon,alpha,gamma)
+    # reward_list = []
+    # for ep in tqdm(range(episode_num)):
+    #     state = env.reset()
+    #     done = False
+    #     total_r = 0
+    #     while not done:
+    #         action = agent.take_action(state)
+    #         next_s, r, done = env.step(action)
+    #         agent.update(state, action, r, next_s)
+    #         state = next_s
+    #         total_r += r
+    #     reward_list.append(total_r)
 
     # 6.DQN
     # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
